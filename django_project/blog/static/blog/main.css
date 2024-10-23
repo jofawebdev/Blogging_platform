@@ -1,0 +1,111 @@
+:root {
+    --background-color: #fafafa;
+    --text-color: #333333;
+    --heading-color: #444444;
+    --navbar-link-color: #cbd5db;
+    --navbar-link-hover-color: #ffffff;
+    --navbar-link-active-weight: 500;
+    --steel-bg-color: #5f788a;
+    --section-bg-color: #ffffff;
+    --section-border-color: #dddddd;
+    --article-title-hover-color: #428bca;
+    --article-border-color: #e3e3e3;
+    --account-heading-size: 2.5rem;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin-top: 5rem;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  .bg-steel {
+    background-color: var(--steel-bg-color);
+  }
+  
+  .site-header .navbar-nav .nav-link {
+    color: var(--navbar-link-color);
+    transition: color 0.3s ease;
+  }
+  
+  .site-header .navbar-nav .nav-link:hover {
+    color: var(--navbar-link-hover-color);
+  }
+  
+  .site-header .navbar-nav .nav-link.active {
+    font-weight: var(--navbar-link-active-weight);
+  }
+  
+  .content-section {
+    background-color: var(--section-bg-color);
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--section-border-color);
+    border-radius: 0.25rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .article-title {
+    color: var(--heading-color);
+  }
+  
+  a.article-title:hover {
+    color: var(--article-title-hover-color);
+    text-decoration: none;
+  }
+  
+  .article-content {
+    white-space: pre-line;
+  }
+  
+  .article-img {
+    height: 65px;
+    width: 65px;
+    margin-right: 1rem;
+    object-fit: cover;
+  }
+  
+  .article-metadata {
+    padding-bottom: 0.0625rem;
+    margin-bottom: 0.25rem;
+    border-bottom: 1px solid var(--article-border-color);
+  }
+  
+  .article-metadata a:hover {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  
+  .article-svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+  }
+  
+  .account-img {
+    height: 125px;
+    width: 125px;
+    margin-right: 1.25rem;
+    margin-bottom: 1rem;
+    object-fit: cover;
+  }
+  
+  .account-heading {
+    font-size: var(--account-heading-size);
+  }  
