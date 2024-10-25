@@ -1,0 +1,6 @@
+# Ignore .env file
+.env
+
+# Ignore any other sensitive files
+smtp_config.json
+secret_settings.py
