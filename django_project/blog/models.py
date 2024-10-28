@@ -28,3 +28,47 @@ class Post(models.Model):
 
 
 
+# Model for Python Tutorials
+class PythonTutorial(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+
+    def __str__(self):
+        return self.title
+    
+
+    class Meta:
+        verbose_name = 'Python Tutorial'
+        verbose_name_plural = 'Python Tutorials'
+
+
+
+# Model for Django Guides
+class DjangoGuide(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+
+
+    def __str__(self):
+        return self.title
+    
+
+    class Meta:
+        verbose_name = 'Django Guide'
+        verbose_name_plural = 'Django Guides'
+
+
+
+# Model for Developer Tools
+class DeveloperTool(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+
+
+    def __str__(self):
+        return self.name
+    
+
+    class Meta:
+        verbose_name = 'Developer Tool'
+        verbose_name_plural = 'Developer Tools'

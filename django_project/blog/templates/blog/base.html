@@ -62,7 +62,8 @@
                 </div>
             </nav>
         </header>
-
+        
+        <!-- Main Content and Sidebar -->
         <main class="container">
             <div class="row">
                 <div class="col-md-8">
@@ -78,17 +79,48 @@
                 <aside class="col-md-4" aria-labelledby="sidebar-heading">
                     <div class="content-section">
                         <h3 id="sidebar-heading">Our Sidebar</h3>
-                        <p class="text-muted">You can put any information here you'd like.</p>
                         <ul class="list-group">
-                            <li class="list-group-item list-group-item-light">Latest Posts</li>
-                            <li class="list-group-item list-group-item-light">Announcements</li>
-                            <li class="list-group-item list-group-item-light">Calendars</li>
-                            <li class="list-group-item list-group-item-light">etc</li>
+                            <li class="list-group-item list-group-item-light">
+                                <a href="{% url 'blog-home' %}">Home</a>
+                            </li>
+                            <li class="list-group-item list-group-item-light">
+                                <a href="{% url 'blog-about' %}">About</a>
+                            </li>
+                            <li class="list-group-item list-group-item-light">
+                                <a href="{% url 'python-tutorials' %}">Python Tutorials</a>
+                            </li>
+                            <li class="list-group-item list-group-item-light">
+                                <a href="{% url 'django-guides' %}">Django Guides</a>
+                            </li>
+                            <li class="list-group-item list-group-item-light">
+                                <a href="{% url 'developer-tools' %}">Developer Tools</a>
+                            </li>
+                            {% if user.is_authenticated %}
+                                <li class="list-group-item list-group-item-light">
+                                    <a href="{% url 'user-posts' username=user.username %}">My Posts</a>
+                                </li>
+                            {% endif %}
                         </ul>
                     </div>
                 </aside>
             </div>
         </main>
+
+        
+        <!-- Footer Section -->
+        <footer class="bg-dark text-light mt-5 py-4">
+            <div class="container text-center">
+                <p>&copy; {% now "Y" %} Django Blog. All Rights Reserved.</p>
+                <p>Explore more on Python, Django, and software development.</p>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="{% url 'blog-home' %}" class="text-light">Home</a></li>
+                    <li class="list-inline-item"><a href="{% url 'blog-about' %}" class="text-light">About</a></li>
+                    <li class="list-inline-item"><a href="{% url 'python-tutorials' %}" class="text-light">Python Tutorials</a></li>
+                    <li class="list-inline-item"><a href="{% url 'django-guides' %}" class="text-light">Django Guides</a></li>
+                    <li class="list-inline-item"><a href="{% url 'developer-tools' %}" class="text-light">Developer Tools</a></li>
+                </ul>
+            </div>
+        </footer>
 
         <!-- Optional JavaScript -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

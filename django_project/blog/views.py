@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post
+from .models import Post, PythonTutorial, DjangoGuide, DeveloperTool
 
 
 def home(request):
@@ -74,5 +74,57 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return False
 
 
+
+# About page view
 def about(request):
-    return render(request, 'blog/about.html', {'title': 'About'})
+    context = {
+        'title': 'About Us',
+        'vision': 'To become the go-to educational platform for aspiring Python and Django developers.',
+        'mission': 'Our mission is to provide high-quality, practical tutorials, tips, and resources to help developers at all levels master Python and Django development.',
+        'core_values': [
+            'Commitment to Quality',
+            'Focus on Practical Skills',
+            'Community and collaboration',
+            'Continuous Learning',
+        ],
+        'objectives': [
+            'To simplify python and Django concepts for developers of all levels.',
+            'To foster a community of learners and developers who support each other.',
+            'To provide up-to-date tutorials on the latest features in Python and Django.',
+            'To promote best practices in coding and software development.'
+        ]
+    }
+    return render(request, 'blog/about.html', context)
+
+
+
+# View for Python Tutorials
+def python_tutorials(request):
+    tutorials = PythonTutorial.objects.all()
+    context = {
+        'title': 'Python Tutorials',
+        'tutorials': tutorials
+    }
+    return render(request, 'blog/python_tutorials.html', context)
+
+
+
+# View for Django Guides
+def django_guides(request):
+    guides = DjangoGuide.objects.all()
+    context = {
+        'title': 'Django Guides',
+        'guides': guides
+    }
+    return render(request, 'blog/django_guides.html', context)
+
+
+
+# View for Developer Tools
+def developer_tools(request):
+    tools = DeveloperTool.objects.all()
+    context = {
+        'title': 'Developer Tools',
+        'tools': tools
+    }
+    return render(request, 'blog/developer_tools.html', context)

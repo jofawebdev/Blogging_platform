@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<div class="container my-5">
+    <h1>{{ title }}</h1>
+    <ul>
+        {% for tool in tools %}
+            <li>
+                <h3>{{ tool.name }}</h3>
+                <p>{{ tool.description }}</p>
+            </li>
+        {% endfor %}    
+    </ul>
+</div>
+{% endblock %}

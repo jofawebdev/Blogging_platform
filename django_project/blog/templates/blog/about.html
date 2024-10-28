@@ -1,4 +1,45 @@
 {% extends "blog/base.html" %}
 {% block content %}
-    <h1>About Page</h1>
+    <div class="container my-5">
+        <h1 class="display-4 text-center">{{ title }}</h1>
+        <hr>
+
+
+        <!-- Vision Section -->
+        <section class="my-4">
+            <h2>Our Vision</h2>
+            <p>{{ vision }}</p>
+        </section>
+
+
+        <!-- Mission Section -->
+        <section class="my-4">
+            <h2>Our Mission</h2>
+            <p>{{ mission }}</p>
+        </section>
+
+
+        <!-- Core Values Section -->
+        <section class="my-4">
+            <h2>Core Values</h2>
+            <ul>
+                {% for value in core_values %}
+                    <li>{{ value }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+
+
+        <!-- Objectives Section -->
+        <section class="my-4">
+            <h2>Our Objectives</h2>
+            <ul>
+                {% for objective in objectives %}
+                    <li>{{ objective }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        
+    </div>
 {% endblock content %}
